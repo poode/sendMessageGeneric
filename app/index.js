@@ -6,8 +6,6 @@ const { requestLogger } = require('./middelwares/requestLogger');
 
 const { messageRouter } = require('./router/messageRouter');
 
-const db = require('../models');
-
 const app = express();
 
 app.use(cors());
