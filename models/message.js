@@ -15,7 +15,14 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.TEXT
     },
-  }, {});
+  }, {
+    indexes:[
+     {
+       unique: false,
+       fields:['from#to#topic']
+     }
+    ]
+  });
   Message.associate = function(models) {
     // associations can be defined here
   };

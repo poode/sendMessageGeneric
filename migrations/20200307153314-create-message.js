@@ -24,7 +24,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    }).then(() => queryInterface.addIndex('Messages', ['from#to#topic']));
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Messages');
