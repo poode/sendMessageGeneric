@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const { ServerError } = require('../config/serverConfig');
-const { requestLogger } = require('../App/middelwares/requestLogger');
+const { requestLogger } = require('./middelwares/requestLogger');
 
 const { messageRouter } = require('./router/messageRouter');
 
