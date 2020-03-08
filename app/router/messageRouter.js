@@ -1,11 +1,17 @@
 const router = require('express-promise-router')();
 
-const { self, index, sendMessage } = require('../Controllers/MessageController');
-const { validatePostRequest } = require('../middelwares/validatePostRequest');
+const {
+  self,
+  index,
+  sendMessage,
+  getMessageList
+} = require('../Controllers/MessageController');
+const { validate } = require('../middelwares/validator');
 const sendMessageSchema = require('../RequestSchemaList/sendMessageSchema.json');
+const getMessageSchema = require('../RequestSchemaList/getMessageSchema.json');
 
-router.get('/', index.bind(self));
-router.post('/send-message', validatePostRequest(sendMessageSchema), sendMessage.bind(self));
+router.get('/', validate(getMessageSchema), getMessageList.bind(self));
+router.post('/send', validate(sendMessageSchema), sendMessage.bind(self));
 
 
 module.exports.messageRouter = router;

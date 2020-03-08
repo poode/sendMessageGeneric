@@ -1,15 +1,13 @@
 const Ajv = require('ajv');
 
-const { ServerError } = require('../../config/serverConfig');
-
 const ajv = new Ajv({ allErrors: true, jsonPointers: true });
 require('ajv-errors')(ajv /*, {singleError: true} */);
 
 const validate = schema => {
   return (req, res, next) => {
-    const requestBody = req.body;
+    const requestPayload = req.method === 'POST' ? req.body : req.method === 'GET' ? req.query : {};
     const validate = ajv.compile(schema);
-    const valid = validate(requestBody);
+    const valid = validate(requestPayload);
     if (valid) {
       return next();
     }
@@ -18,4 +16,4 @@ const validate = schema => {
   };
 }
 
-  module.exports.validatePostRequest = validate;
+  module.exports.validate = validate;
