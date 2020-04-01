@@ -8,7 +8,7 @@
 * Just *Run* `npm i` only this will do everything needed and runs server on `http://localhost:3000`
   if there is no specific port configured in `config.json`
 
-* to test APIs follow `https://documenter.getpostman.com/view/2773498/SzYYzyFt?version=latest`
+* to test APIs follow [Postman Collection URL](https://documenter.getpostman.com/view/2773498/SzYYzyFt?version=latest)
 
 ## Individual Usage Instructions
 
@@ -43,6 +43,6 @@
 
 * Please don't forget to fix broken paths
 
-* To test APIs please follow postman URL `https://documenter.getpostman.com/view/2773498/SzYYzyFt?version=latest`
+* to test APIs follow [Postman Collection URL](https://documenter.getpostman.com/view/2773498/SzYYzyFt?version=latest)
 
 **contact me if there is something is not clear!**
