@@ -14,7 +14,7 @@
 
 * *Run* ```npm i ajv ajv-errors express-promise-router lodash mysql2 sequelize && npm i -D sequelize-cli```
 
-* Create Table in database called `Messages` with Capital later and `s` at the end (as is)
+* Create Table in database called `Messages` with Capital letter and `s` at the end (as is)
   * First Method (via any DBMS)
 
     | id |  from#to#topic | chat | createdAt | updatedAt |
