@@ -5,14 +5,18 @@
 * in config folder create a `config.json` file contains same as in `config.example.json`
   and please edit it as your machine works!
 
-* Just *Run* `npm i` only this will do everything needed and runs server on `http://localhost:3000`
+* Just *Run*
+  > `npm i`
+
+  this will do everything is needed and runs server on `http://localhost:3000`
   if there is no specific port configured in `config.json`
 
 * to test APIs follow [Postman Collection URL](https://documenter.getpostman.com/view/2773498/SzYYzyFt?version=latest)
 
 ## Individual Usage Instructions
 
-* *Run* ```npm i ajv ajv-errors express-promise-router lodash mysql2 sequelize && npm i -D sequelize-cli```
+* *Run*
+  > ```npm i ajv ajv-errors express-promise-router lodash mysql2 sequelize && npm i -D sequelize-cli```
 
 * Create Table in database called `Messages` with Capital letter and `s` at the end (as is)
   * First Method (via any DBMS)
