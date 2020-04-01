@@ -1,4 +1,4 @@
-{
+exports.sendMessageSchema = {
   "type": "object",
   "required": [
       "from",

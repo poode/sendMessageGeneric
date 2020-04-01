@@ -6,8 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "migrate": "sequelize db:migrate",
-    "migrate:undo": "sequelize db:migrate:undo",
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo",
+    "db:create": "sequelize db:create",
+    "postinstall": "sequelize db:create && npm run db:migrate && npm run start:dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +21,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-promise-router": "^3.0.3",
+    "lodash": "^4.17.15",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.5"
   },

@@ -1,4 +1,9 @@
-const { sendMsg, getMessageSorted } = require('../services/chat');
+const {
+  sendMsg,
+  getMessageSorted,
+  findByToUserMessageList,
+  findMessageListByToUserAndTopic,
+} = require('../services/chat');
 const { ServerError } = require('../../config/serverConfig');
 
 module.exports = new class MessageController {
@@ -18,5 +23,8 @@ module.exports = new class MessageController {
     res.json({ message: 'found messages!', data: result });
   }
 
-
+  async getMessageListToUser(req, res, next) {
+    const result = await findByToUserMessageList(req.query);
+    res.json({ message: 'found messages!', data: result });
+  }
 }

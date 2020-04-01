@@ -2,15 +2,17 @@ const router = require('express-promise-router')();
 
 const {
   self,
-  index,
   sendMessage,
-  getMessageList
+  getMessageList,
+  getMessageListToUser
 } = require('../Controllers/MessageController');
-const { validate } = require('../middelwares/validator');
-const sendMessageSchema = require('../RequestSchemaList/sendMessageSchema.json');
-const getMessageSchema = require('../RequestSchemaList/getMessageSchema.json');
+const { validate } = require('../middlewares/validator');
+const { sendMessageSchema } = require('../RequestSchemaList/sendMessageSchema.js');
+const { getMessageSchema } = require('../RequestSchemaList/getMessageSchema.js');
+const { MessageListToUserSchema } = require('../RequestSchemaList/MessageListToUserSchema.js');
 
 router.get('/', validate(getMessageSchema), getMessageList.bind(self));
+router.get('/me', validate(MessageListToUserSchema), getMessageListToUser.bind(self));
 router.post('/send', validate(sendMessageSchema), sendMessage.bind(self));
 
 
